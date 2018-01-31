@@ -12,6 +12,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(publicPath));
 
+<<<<<<< HEAD
 io.on('connection', (socket) => {
   console.log('New user connected');
   socket.on('disconnect', (reason) => {
@@ -20,5 +21,8 @@ io.on('connection', (socket) => {
 })
 
 server.listen(port, () => {
+=======
+app.listen(port, () => {
+>>>>>>> 7a75d8e15979f136b32a5ecb7b9af11f2b0a2b2e
   console.log(`You are listen to ${port}`)
 });
