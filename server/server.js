@@ -27,6 +27,13 @@ io.on('connection', (socket) => {
     callback();
   })
 
+  socket.on('join', (params, callback) => {
+    if (!isRealString(params.name) || !isRealString(params.room)) {
+      callback('Name and room are required.');
+    }
+    callback();
+  })
+
   socket.on('createMessage', (message, callback) => {
     console.log('createMessage', message);
     io.emit('newMessage', generateMessage(message.from, message.text));
